@@ -1,0 +1,7 @@
+.app {
+  display: flex;
+  align-items: center;
+  background-color: #0d1117;
+  min-height: 100vh;
+  flex-direction: column;
+}
