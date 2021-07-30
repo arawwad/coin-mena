@@ -6,6 +6,8 @@ import {
   Redirect,
 } from 'react-router-dom';
 
+import { Header } from './components/Header';
+
 import styles from './App.module.css';
 
 const Repositories = lazy(() => import('./pages/Repositories'));
@@ -15,6 +17,7 @@ function App() {
   return (
     <div className={styles.app}>
       <Router>
+        <Header />
         <Suspense fallback={<div>Loading...</div>}>
           <Switch>
             <Route exact path="/repositories">
