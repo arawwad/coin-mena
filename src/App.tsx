@@ -5,31 +5,39 @@ import {
   Switch,
   Redirect,
 } from 'react-router-dom';
+import { QueryClient, QueryClientProvider } from 'react-query';
 
 import { Header } from './components/Header';
 
 import styles from './App.module.css';
+import { ParamsProvider } from './contexts/params';
 
-const Repositories = lazy(() => import('./pages/Repositories'));
-const Developers = lazy(() => import('./pages/Developers'));
+const Repositories = lazy(() => import('./pages/Repositories/index'));
+const Developers = lazy(() => import('./pages/Developers/index'));
+
+const queryClient = new QueryClient();
 
 function App() {
   return (
     <div className={styles.app}>
-      <Router>
-        <Header />
-        <Suspense fallback={<div>Loading...</div>}>
-          <Switch>
-            <Route exact path="/repositories">
-              <Repositories />
-            </Route>
-            <Route exact path="/developers">
-              <Developers />
-            </Route>
-            <Redirect path="*" to="/repositories" />
-          </Switch>
-        </Suspense>
-      </Router>
+      <QueryClientProvider client={queryClient}>
+        <ParamsProvider>
+          <Router>
+            <Header />
+            <Suspense fallback={<div>Loading...</div>}>
+              <Switch>
+                <Route exact path="/repositories">
+                  <Repositories />
+                </Route>
+                <Route exact path="/developers">
+                  <Developers />
+                </Route>
+                <Redirect path="*" to="/repositories" />
+              </Switch>
+            </Suspense>
+          </Router>
+        </ParamsProvider>
+      </QueryClientProvider>
     </div>
   );
 }
