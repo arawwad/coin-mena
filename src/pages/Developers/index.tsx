@@ -10,11 +10,11 @@ const Developers = () => {
     fetchDevs(params)
   );
   return (
-    <>
+    <div>
       {developers.map((developer) => {
           return <DeveloperListItem key={developer.username} developer={developer} />;
       })}
-    </>
+    </div>
   );
 };
 

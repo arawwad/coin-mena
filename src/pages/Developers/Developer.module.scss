@@ -1,0 +1,38 @@
+.wrapper {
+  color: #8b949e;
+  font-size: 12px;
+  display: grid;
+  grid-template-columns: 50px 1fr 2fr 50px;
+  column-gap: 20px;
+}
+
+.avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+}
+
+.name {
+  .fullName {
+    color: #58a6ff;
+    font-size: 20px;
+  }
+  .userName {
+    font-size: 16px;
+  }
+}
+
+.popularRepo {
+  padding-right: 50%;
+  .title {
+    text-transform: uppercase;
+  }
+  
+  .repoName {
+    color: #58a6ff;
+    font-weight: 600;
+    font-size: 16px;
+  }
+}
+
+
