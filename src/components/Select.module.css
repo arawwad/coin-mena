@@ -1,0 +1,9 @@
+.select {
+  background: none;
+  border: none;
+  width: max-content;
+  max-width: 100px;
+  cursor: pointer;
+  outline: none;
+  color: #8b949e;
+}

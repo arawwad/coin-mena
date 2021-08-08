@@ -11,6 +11,7 @@ import { Header } from './components/Header';
 
 import styles from './App.module.css';
 import { ParamsProvider } from './contexts/params';
+import { ParamsDisplay } from './components/ParamsDisplay';
 
 const Repositories = lazy(() => import('./pages/Repositories/index'));
 const Developers = lazy(() => import('./pages/Developers/index'));
@@ -24,6 +25,7 @@ function App() {
         <ParamsProvider>
           <Router>
             <Header />
+            <ParamsDisplay />
             <Suspense fallback={<div>Loading...</div>}>
               <Switch>
                 <Route exact path="/repositories">

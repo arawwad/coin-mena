@@ -1,0 +1,39 @@
+.wrapper {
+  margin-top: 40px;
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  background-color: #161b22;
+  border: 1px solid #30363d;
+  border-radius: 6px 6px 0 0;
+  width: 80%;
+  font-size: 14px;
+  color: #8b949e;
+}
+
+.linkGroup {
+  .link {
+    font-weight: 500;
+    border: 1px solid #30363d;
+    text-decoration: none;
+    color: #c9d1d9;
+    padding: 5px 16px;
+    &:first-child {
+      border-radius: 6px 0 0 6px;
+    }
+    &:last-child {
+      border-radius: 0 6px 6px 0;
+    }
+    &.active {
+      background-color: #1f6feb;
+      border-color: #388bfd;
+      color: #f0f6fc;
+    }
+  }
+}
+
+.selects {
+  display: grid;
+  grid-template-columns: repeat(3, max-content);
+  column-gap: 10px;
+}
