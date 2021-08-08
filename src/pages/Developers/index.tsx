@@ -6,7 +6,7 @@ import { DeveloperListItem } from './Developer';
 const Developers = () => {
   const { params } = useParams();
   const { data: developers = []} = useQuery(
-    'devs',
+    ['devs', params],
     fetchDevs(params)
   );
   return (

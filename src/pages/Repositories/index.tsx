@@ -6,7 +6,7 @@ import { RepositoryListItem } from './Repository';
 const Repositories = () => {
   const { params } = useParams();
   const { data: repositories = []} = useQuery(
-    'repos',
+    ['repos', params],
     fetchRepos(params)
   );
   return (
