@@ -10,11 +10,11 @@ const Repositories = () => {
     fetchRepos(params)
   );
   return (
-    <>
+    <div>
       {repositories.map((repository) => {
           return <RepositoryListItem key={repository.repositoryName} repository={repository} />;
       })}
-    </>
+    </div>
   );
 };
 
