@@ -1,0 +1,31 @@
+.wrapper {
+  color: #8b949e;
+  font-size: 12px;
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  column-gap: 20%;
+  .repoInfo {
+    .title {
+      color: #58a6ff;
+      font-size: 20px;
+    }
+    .description {
+      font-size: 16px;
+    }
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, max-content);
+      column-gap: 10px;
+      align-items: center;
+    }
+    .miniAvatar {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      margin: 0 2px;
+    }
+  }
+  .stars {
+
+  }
+}
