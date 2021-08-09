@@ -25,18 +25,20 @@ function App() {
         <ParamsProvider>
           <Router>
             <Header />
-            <ParamsDisplay />
-            <Suspense fallback={<div>Loading...</div>}>
-              <Switch>
-                <Route exact path="/repositories">
-                  <Repositories />
-                </Route>
-                <Route exact path="/developers">
-                  <Developers />
-                </Route>
-                <Redirect path="*" to="/repositories" />
-              </Switch>
-            </Suspense>
+            <div className={styles.layout}>
+              <ParamsDisplay />
+              <Suspense fallback={<div>Loading...</div>}>
+                <Switch>
+                  <Route exact path="/repositories">
+                    <Repositories />
+                  </Route>
+                  <Route exact path="/developers">
+                    <Developers />
+                  </Route>
+                  <Redirect path="*" to="/repositories" />
+                </Switch>
+              </Suspense>
+            </div>
           </Router>
         </ParamsProvider>
       </QueryClientProvider>

@@ -1,6 +1,7 @@
 import { FC } from 'react';
 import { Repository } from '../../types/Repository';
 import styles from './Repository.module.scss';
+import { GoRepo, GoRepoForked, GoStar } from 'react-icons/go'
 
 type RepositoryListItemProps = {
   repository: Repository;
@@ -18,13 +19,13 @@ export const RepositoryListItem: FC<RepositoryListItemProps> = ({
   <div className={styles.wrapper}>
     <div className={styles.repoInfo}>
       <div className={styles.title}>
-        {repository.username} / {repository.repositoryName}
+        <GoRepo size="14" className={styles.icon} />{repository.username} / {repository.repositoryName}
       </div>
       <div className={styles.description}>{repository.description}</div>
       <div className={styles.stats}>
         <span>{repository.language}</span>
-        <span>{repository.totalStars}</span>
-        <span>{repository.forks}</span>
+        <span><GoStar className={styles.icon} />{repository.totalStars}</span>
+        <span><GoRepoForked className={styles.icon} />{repository.forks}</span>
         <span>
           Built by
           {repository.builtBy.map((user) => (
@@ -39,7 +40,7 @@ export const RepositoryListItem: FC<RepositoryListItemProps> = ({
     </div>
     <div className={styles.stars}>
       <button>Star</button>
-      <p>{repository.starsSince} stars {SINCE_MAP[repository.since]}</p>
+      <p><GoStar size="16" className={styles.icon} />{repository.starsSince} stars {SINCE_MAP[repository.since]}</p>
     </div>
   </div>
 );

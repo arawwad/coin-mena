@@ -4,6 +4,9 @@
   display: grid;
   grid-template-columns: 3fr 1fr;
   column-gap: 20%;
+  border: 1px solid #30363d;
+  border-top: none;
+  padding: 16px;
   .repoInfo {
     .title {
       color: #58a6ff;
@@ -11,12 +14,15 @@
     }
     .description {
       font-size: 16px;
+      margin-top: 10px;
     }
     .stats {
       display: grid;
       grid-template-columns: repeat(4, max-content);
+      grid-template-rows: 40px;
       column-gap: 10px;
       align-items: center;
+      margin-top: 10px;
     }
     .miniAvatar {
       width: 20px;
@@ -25,7 +31,8 @@
       margin: 0 2px;
     }
   }
-  .stars {
-
+  .icon {
+    margin-right: 5px;
+    color:#8b949e;
   }
 }
